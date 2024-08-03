@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    {% block script %}{% endblock %}
+    <title>ConvertGenius: {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header id="header">
+        <nav id="menu">
+            <a href="/" class="menuOpts" id="firstMenuOpt"><span id="brand">Convert<span class="highlight">Genius</span></span></a>
+            <a href="/video" class="menuOpts">Video</a>
+            <a href="/image" class="menuOpts">Image</a>
+            <a href="/audio" class="menuOpts">Audio</a>
+        </nav>
+    </header>
+    <main id="main">
+        {% block main %}{% endblock %}
+    </main>
+</body>
+</html>

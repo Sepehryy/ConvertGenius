@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Video
+{% endblock %}
+
+{% block main %}
+    <form action="/video" method="post" enctype="multipart/form-data" class="formInp">
+
+        <h1 class="formHeader">Video Converter</h1>
+        {% if error %}
+            <a class="formMiddle">{{ error }}</a>
+        {% endif %}
+        <input class="inpChoose" type="file" name="file">
+        <button class="submitBtn" type="submit">Submit</button>
+
+    </form>
+{% endblock %}

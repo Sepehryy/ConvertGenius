@@ -1,0 +1,17 @@
+templa{% extends "layout.html" %}
+
+{% block title %}
+    Export
+{% endblock %}
+
+{% block main %}
+    <div id="exportLinkBox">
+
+        {% for filename in filenames %}
+        <p>
+            <a href="{{ route }}/{{ filename }}" download>Download {{ filename }}</a>
+        </p>
+        {% endfor %}
+
+    </div>
+{% endblock %}

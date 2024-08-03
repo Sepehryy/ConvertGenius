@@ -49,10 +49,15 @@ def convert_image(file_path, filename, file_format, formats, folder):
         output_format = format[1:].upper()
         if output_format == 'JPG':
             output_format = 'JPEG'
-        # Handle WebP separately
+
         elif output_format == 'WEBP':
             output_format = 'WEBP'
+
         output_path = os.path.join(folder, f"{filename}.{format[1:]}")
+
+        if image.mode == 'RGBA' and output_format in ['JPEG', 'BMP']:
+            image = image.convert('RGB')
+
         image.save(output_path, output_format)
         filenames.append(f"{filename}.{format[1:]}")
     image.close()

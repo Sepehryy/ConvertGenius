@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Audio
+{% endblock %}
+
+{% block main %}
+    <form action="/audio" method="post" enctype="multipart/form-data" class="formInp">
+
+        <h1 class="formHeader">Audio Converter</h1>
+        {% if error %}
+            <a class="formMiddle">{{ error }}</a>
+        {% endif %}
+        <input class="inpChoose" type="file" name="file">
+        <button class="submitBtn" type="submit">Submit</button>
+
+    </form>
+{% endblock %}
